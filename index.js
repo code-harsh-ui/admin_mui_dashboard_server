@@ -33,6 +33,7 @@ app.use(helmet.crossOriginEmbedderPolicy({ policy: "credentialless" }));
 app.use(morgan("common")); // :remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length]
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 
 /* ROUTES */
 //! when you run your application and send requests to the specified routes, the paths will be automatically prefixed with /client due to the way the router is mounted: like "/client/create or /client/update or /client/delete" so basically /client is a prefix or we say a base route and rest of path we'll define in "clientRoutes" file
@@ -50,7 +51,7 @@ mongoose
     console.log("connection is successfull..");
     // With the help of Models we are inject the data into mongo Atlas using "insertMany" query for more clarification check the below path
     //? Reference D:\My Files\0. Web Development Bootcamp\Mongo Db\mongoose\16.inBuilt-validator.js
-    // User.insertMany(dataUser);
+    // User.insertMany(dataUser); //! run this command only once to prevent storing data to mongoAtlas mulitple times
   })
   .catch((err) => {
     console.log(err, "connection failed");
