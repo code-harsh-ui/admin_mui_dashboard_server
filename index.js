@@ -21,8 +21,10 @@ import salesRoutes from "./routers/sales.js";
 // User Data Imports
 // Importing Model
 import User from "./models/User.js";
+import Product from "./models/Product.js";
+import ProductStat from "./models/ProductStat.js";
 // Here we have a file where we place fake json data and in that collection of data we are extracting only "dataUser" from the collection so that we can inject it into mongo atlas
-import { dataUser } from "./data/index.js";
+import { dataUser, dataProduct, dataProductStat } from "./data/index.js";
 
 /* CONFIGURATION */
 dotenv.config();
@@ -52,6 +54,8 @@ mongoose
     // With the help of Models we are inject the data into mongo Atlas using "insertMany" query for more clarification check the below path
     //? Reference D:\My Files\0. Web Development Bootcamp\Mongo Db\mongoose\16.inBuilt-validator.js
     // User.insertMany(dataUser); //! run this command only once to prevent storing data to mongoAtlas mulitple times
+    // Product.insertMany(dataProduct);
+    // ProductStat.insertMany(dataProductStat);
   })
   .catch((err) => {
     console.log(err, "connection failed");
