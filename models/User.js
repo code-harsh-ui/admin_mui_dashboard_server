@@ -25,6 +25,7 @@ const userSchema = new mongoose.Schema(
     occupation: String,
     phoneNumber: String,
     transactions: Array,
+    img: Array,
     role: {
       type: String,
       // enum is used when we want only particular predefined values like user can choose only these predefined values not anything else. This is case sensitive to prevent this we can use uppercase or lowercase to match the predefined values for the field

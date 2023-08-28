@@ -18060,6 +18060,10 @@ export const dataUser = [
       "63701d74f032399c00000151",
       "63701d74f03239c72c0001a1",
     ],
+    img: [
+      "https://dl.dropboxusercontent.com/s/op9i667hf8fcgrj/Influ.png?dl=0",
+      "https://dl.dropboxusercontent.com/s/wvqvfheaqo159l2/influ-bbf.png?dl=0",
+    ],
     role: "superadmin",
   },
   {
