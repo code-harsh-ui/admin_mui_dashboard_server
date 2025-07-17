@@ -23,8 +23,14 @@ import salesRoutes from "./routers/sales.js";
 import User from "./models/User.js";
 import Product from "./models/Product.js";
 import ProductStat from "./models/ProductStat.js";
+import Transaction from "./models/Transaction.js";
 // Here we have a file where we place fake json data and in that collection of data we are extracting only "dataUser" from the collection so that we can inject it into mongo atlas
-import { dataUser, dataProduct, dataProductStat } from "./data/index.js";
+import {
+  dataUser,
+  dataProduct,
+  dataProductStat,
+  dataTransaction,
+} from "./data/index.js";
 
 /* CONFIGURATION */
 dotenv.config();
@@ -56,6 +62,7 @@ mongoose
     // User.insertMany(dataUser); //! run this command only once to prevent storing data to mongoAtlas mulitple times
     // Product.insertMany(dataProduct);
     // ProductStat.insertMany(dataProductStat);
+    // Transaction.insertMany(dataTransaction);
   })
   .catch((err) => {
     console.log(err, "connection failed");
